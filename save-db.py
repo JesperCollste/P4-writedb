@@ -87,7 +87,7 @@ csv_file_path = "db_products.csv"
 
 # Write the products data to a CSV file
 with open(csv_file_path, mode='w', newline='') as file:
-    writer = csv.DictWriter(file, fieldnames=["id", "name", "description", "price", "quantity"])
+    writer = csv.DictWriter(file, fieldnames=["id", "name", "desc", "price", "quantity"])
     writer.writeheader()  # Write the header row
     writer.writerows(products)  # Write the product data
 
