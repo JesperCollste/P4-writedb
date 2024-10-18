@@ -92,3 +92,11 @@ with open(csv_file_path, mode='w', newline='') as file:
     writer.writerows(products)  # Write the product data
 
 print(f"Data successfully saved to {csv_file_path}")
+
+def save_data(filename, products):
+    with open(filename, mode='w', newline='') as file:
+        writer = csv.DictWriter(file, fieldnames=["id", "name", "desc", "price", "quantity"])
+        writer.writeheader() 
+        writer.writerows(products)  
+
+    print(f"Data successfully saved to {filename}")
