@@ -1,102 +1,108 @@
+"""
+__author__  = "Jesper Collste"
+__version__ = "3.12.1"
+__email__   = "Jesper.Collste@elev.ga.ntig.se"
+"""
 import csv
 
-products = [
+cars = [
+    {
+        "id": 0,
+        "name": "Toyota Corolla",
+        "desc": "En paver och branslesnal kompaktbil",
+        "price": 220000,
+        "quantity": 5
+    },
     {
         "id": 1,
-        "name": "Wireless Keyboard Pro",
-        "desc": "A compact wireless keyboard with a long battery life.",
-        "price": 29.99,
-        "quantity": 150
+        "name": "Ford Mustang",
+        "desc": "En klassisk amerikansk sportbil med V8-motor",
+        "price": 600000,
+        "quantity": 3
     },
     {
         "id": 2,
-        "name": "Noise-Cancelling Headphones Max",
-        "desc": "High-quality headphones with active noise cancellation.",
-        "price": 199.99,
-        "quantity": 75
+        "name": "Audi A4",
+        "desc": "En lyxig sedan med avancerad teknik och komfortåäö",
+        "price": 450000,
+        "quantity": 4
     },
     {
         "id": 3,
-        "name": "4K Ultra HD Monitor",
-        "desc": "A stunning 27-inch 4K monitor with vibrant colors.",
-        "price": 399.99,
-        "quantity": 50
+        "name": "Volvo XC90",
+        "desc": "En saker och rymlig SUV perfekt for familjer",
+        "price": 650000,
+        "quantity": 2
     },
     {
         "id": 4,
-        "name": "Bluetooth Speaker",
-        "desc": "Portable Bluetooth speaker with deep bass and crystal clear sound.",
-        "price": 59.99,
-        "quantity": 200
+        "name": "Mercedes-Benz C-Class",
+        "desc": "En elegant och stilren bil med en kraftfull motor",
+        "price": 550000,
+        "quantity": 6
     },
     {
         "id": 5,
-        "name": "Gaming Mouse Xtreme",
-        "desc": "Ergonomic gaming mouse with customizable buttons and RGB lighting.",
-        "price": 49.99,
-        "quantity": 120
+        "name": "BMW 320i",
+        "desc": "En sportig och hogpresterande bil med bra hantering",
+        "price": 500000,
+        "quantity": 4
     },
     {
         "id": 6,
-        "name": "Smartwatch Fit",
-        "desc": "Fitness-focused smartwatch with heart rate monitor and GPS.",
-        "price": 149.99,
-        "quantity": 80
+        "name": "Volkswagen Golf",
+        "desc": "En praktisk och mangsidig hatchback",
+        "price": 250000,
+        "quantity": 7
     },
     {
         "id": 7,
-        "name": "Portable SSD 1TB",
-        "desc": "High-speed portable SSD with 1TB storage capacity.",
-        "price": 129.99,
-        "quantity": 90
+        "name": "Chevrolet Bolt",
+        "desc": "En elbil med lang rackvidd och miljovanliga funktioner",
+        "price": 350000,
+        "quantity": 3
     },
     {
         "id": 8,
-        "name": "USB-C Hub",
-        "desc": "7-in-1 USB-C hub with HDMI, USB 3.0, and SD card reader.",
-        "price": 34.99,
-        "quantity": 140
+        "name": "Honda Civic",
+        "desc": "En popular och bransleeffektiv bil",
+        "price": 230000,
+        "quantity": 5
     },
     {
         "id": 9,
-        "name": "Mechanical Keyboard",
-        "desc": "RGB mechanical keyboard with tactile switches.",
-        "price": 89.99,
-        "quantity": 110
+        "name": "Porsche 911",
+        "desc": "En ikonisk sportbil med enastende prestanda",
+        "price": 1200000,
+        "quantity": 1
     },
     {
         "id": 10,
-        "name": "1080p Webcam",
-        "desc": "Full HD webcam with built-in microphone for video conferencing.",
-        "price": 39.99,
-        "quantity": 95
-    },
-    {
-        "id": 1000,
-        "name": "Wi-Fi Range Extender",
-        "desc": "Boost your Wi-Fi signal with this easy-to-install range extender.",
-        "price": 49.99,
-        "quantity": 130
+        "name": "Nissan Leaf",
+        "desc": "En budgetvanlig elbil med enkel teknik och bra rackvidd",
+        "price": 300000,
+        "quantity": 6
     }
 ]
 
 
 
-# Define the CSV file path
-csv_file_path = "db_products.csv"
 
-# Write the products data to a CSV file
+# Define the CSV file path
+csv_file_path = "db_cars.csv"
+
+# Write the cars data to a CSV file
 with open(csv_file_path, mode='w', newline='') as file:
     writer = csv.DictWriter(file, fieldnames=["id", "name", "desc", "price", "quantity"])
     writer.writeheader()  # Write the header row
-    writer.writerows(products)  # Write the product data
+    writer.writerows(cars)  # Write the product data
 
 print(f"Data successfully saved to {csv_file_path}")
 
-def save_data(filename, products):
+def save_data(filename, cars):
     with open(filename, mode='w', newline='') as file:
         writer = csv.DictWriter(file, fieldnames=["id", "name", "desc", "price", "quantity"])
         writer.writeheader() 
-        writer.writerows(products)  
+        writer.writerows(cars)  
 
     print(f"Data successfully saved to {filename}")
